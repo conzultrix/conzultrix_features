@@ -4,6 +4,7 @@ package = Conzultrix
 version = 7.x-1.0-alpha1
 project = business
 dependencies[] = ctools
+dependencies[] = ds
 dependencies[] = features
 dependencies[] = image
 dependencies[] = product
