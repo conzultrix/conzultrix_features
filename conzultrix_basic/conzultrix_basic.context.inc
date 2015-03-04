@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * basic.context.inc
+ * conzultrix_basic.context.inc
  */
 
 /**
@@ -32,16 +32,10 @@ function conzultrix_basic_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'basic-conzultrix_main_menu' => array(
-          'module' => 'basic',
+        'conzultrix_basic-conzultrix_main_menu' => array(
+          'module' => 'conzultrix_basic',
           'delta' => 'conzultrix_main_menu',
           'region' => 'navigation',
-          'weight' => '-9',
-        ),
-        'basic-copyright' => array(
-          'module' => 'basic',
-          'delta' => 'copyright',
-          'region' => 'footer',
           'weight' => '-10',
         ),
         'connections-site_connections' => array(

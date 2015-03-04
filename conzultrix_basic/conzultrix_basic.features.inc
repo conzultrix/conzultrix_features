@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * basic.features.inc
+ * conzultrix_basic.features.inc
  */
 
 /**
