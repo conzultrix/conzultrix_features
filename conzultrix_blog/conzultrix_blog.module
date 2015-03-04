@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Conzultrix Blog feature.
+ */
+
+include_once 'conzultrix_blog.features.inc';

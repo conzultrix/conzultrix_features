@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Conzultrix Business feature.
+ */
+
+include_once 'conzultrix_business.features.inc';

@@ -1,8 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Basic feature.
- */
-
-include_once 'basic.features.inc';
-module_load_include('inc', 'basic', 'basic.block');
