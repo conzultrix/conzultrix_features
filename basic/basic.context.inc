@@ -26,11 +26,29 @@ function basic_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'system-main-menu' => array(
-          'module' => 'system',
-          'delta' => 'main-menu',
-          'region' => 'navigation',
+        'connections-telephone' => array(
+          'module' => 'connections',
+          'delta' => 'telephone',
+          'region' => 'header',
           'weight' => '-10',
+        ),
+        'basic-conzultrix_main_menu' => array(
+          'module' => 'basic',
+          'delta' => 'conzultrix_main_menu',
+          'region' => 'navigation',
+          'weight' => '-9',
+        ),
+        'basic-copyright' => array(
+          'module' => 'basic',
+          'delta' => 'copyright',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+        'connections-site_connections' => array(
+          'module' => 'connections',
+          'delta' => 'site_connections',
+          'region' => 'footer',
+          'weight' => '-9',
         ),
       ),
     ),

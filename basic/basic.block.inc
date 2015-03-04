@@ -37,7 +37,7 @@ function basic_block_view($delta = '') {
       $menu = menu_navigation_links('main-menu');
       $block['subject'] = t('Main Menu');
       $block['content'] = array(
-        '#prefix' => '<nav id="nav-main-menu">',
+        '#prefix' => '<nav id="main-menu">',
         '#suffix' => '</nav>',
         '#theme' => 'links',
         '#links' => $menu,

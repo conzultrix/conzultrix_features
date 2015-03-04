@@ -3,6 +3,7 @@ core = 7.x
 package = Conzultrix
 version = 7.x-0.1-alpha1
 project = basic
+dependencies[] = connections
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = features
