@@ -26,9 +26,9 @@ function conzultrix_basic_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'connections-telephone' => array(
+        'connections-contact_us' => array(
           'module' => 'connections',
-          'delta' => 'telephone',
+          'delta' => 'contact_us',
           'region' => 'header',
           'weight' => '-10',
         ),
