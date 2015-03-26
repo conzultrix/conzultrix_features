@@ -44,6 +44,12 @@ function conzultrix_basic_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-9',
         ),
+        'conzultrix_basic-copyright' => array(
+          'module' => 'conzultrix_basic',
+          'delta' => 'copyright',
+          'region' => 'footer',
+          'weight' => '-8',
+        ),
       ),
     ),
   );
