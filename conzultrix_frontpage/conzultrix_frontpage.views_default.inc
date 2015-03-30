@@ -65,10 +65,6 @@ function conzultrix_frontpage_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['block_description'] = 'What We Do';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['path'] = 'home';
   $export['core_business'] = $view;
 
   return $export;
