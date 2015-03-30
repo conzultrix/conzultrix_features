@@ -1,0 +1,14 @@
+name = Conzultrix Frontpage
+core = 7.x
+package = Conzultrix
+version = 7.x-0.1-alpha1
+project = conzultrix_frontpage
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = views
+features[context][] = frontpage
+features[ctools][] = context:context:3
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = core_business
+project path = sites/all/modules/conzultrix_features

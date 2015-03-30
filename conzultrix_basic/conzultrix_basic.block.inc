@@ -50,8 +50,7 @@ function conzultrix_basic_block_view($delta = '') {
     
     case 'copyright':
       $startyear = 2008;
-      $currentyear = date('Y');
-      $year = ($currentyear > $startyear) ? $startyear . ' - ' . $currentyear : $startyear;
+      $year = date('Y');
       $block['suject'] = t('Copyright');
       $block['content'] = '<div class="copyright">&#169; Copyright '
         . $year
