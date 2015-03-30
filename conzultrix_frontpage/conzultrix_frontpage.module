@@ -5,3 +5,27 @@
  */
 
 include_once 'conzultrix_frontpage.features.inc';
+
+/**
+ * Implements hook_menu();
+ */
+function conzultrix_frontpage_menu() {
+  $items['home'] = array(
+    'title' => 'Welcome to Conzultrix',
+    'page callback' => 'conzultrix_frontpage_home',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  
+  return $items;
+}
+
+function conzultrix_frontpage_home() {
+    $markup = '<p>We are a '. l('Technology', 'technology') . ' and ' . l('Business Development', 'business-development') . ' company.</p>';
+    //return t('We are a Technology and Business Development company.');
+    return array(
+      '#markup' => $markup,
+      '#prefix' => '<div class"home-intro">',
+      '#suffix' => '</div>',
+    );
+}
