@@ -32,6 +32,12 @@ function conzultrix_frontpage_context_default_contexts() {
           'region' => 'postrow',
           'weight' => '-10',
         ),
+        'views-products-block' => array(
+          'module' => 'views',
+          'delta' => 'products-block',
+          'region' => 'postrow',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
