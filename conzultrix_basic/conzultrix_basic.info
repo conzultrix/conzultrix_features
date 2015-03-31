@@ -21,6 +21,7 @@ features[user_role][] = administrator
 features[variable][] = admin_theme
 features[variable][] = clean_url
 features[variable][] = connections_facebook_url
+features[variable][] = connections_gplus_url
 features[variable][] = connections_telephone_no
 features[variable][] = connections_twitter_url
 features[variable][] = fences_default_classes

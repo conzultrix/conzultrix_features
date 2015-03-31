@@ -34,6 +34,13 @@ function conzultrix_basic_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'connections_gplus_url';
+  $strongarm->value = 'https://plus.google.com/113163238906144736441/about';
+  $export['connections_gplus_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'connections_telephone_no';
   $strongarm->value = '+2348032987021';
   $export['connections_telephone_no'] = $strongarm;
