@@ -5,3 +5,4 @@
  */
 
 include_once 'conzultrix_business.features.inc';
+module_load_include('inc', 'conzultrix_business', 'conzultrix_business.theme');

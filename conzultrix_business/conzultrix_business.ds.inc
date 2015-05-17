@@ -17,15 +17,10 @@ function conzultrix_business_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'business';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'title' => array(
+    'formatted_short_title' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'h2',
-        'class' => '',
-      ),
     ),
     'node_link' => array(
       'weight' => '3',
@@ -60,14 +55,14 @@ function conzultrix_business_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_business_image',
-        1 => 'title',
+        1 => 'formatted_short_title',
         2 => 'body',
         3 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_business_image' => 'ds_content',
-      'title' => 'ds_content',
+      'formatted_short_title' => 'ds_content',
       'body' => 'ds_content',
       'node_link' => 'ds_content',
     ),
