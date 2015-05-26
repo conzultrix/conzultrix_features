@@ -21,7 +21,7 @@ function conzultrix_frontpage_menu() {
 }
 
 function conzultrix_frontpage_home() {
-    $markup = '<p>We are a '. l('Technology', 'technology') . ' and ' . l('Business Development', 'business-development') . ' company.</p>';
+    $markup = '<p>We are a <span class="frontpage-core-business">'. l('Technology', 'technology') . ' &amp; ' . l('Business Development', 'business-development') . '</span> company.</p>';
     //return t('We are a Technology and Business Development company.');
     return array(
       '#markup' => $markup,

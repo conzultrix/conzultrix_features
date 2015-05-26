@@ -43,7 +43,6 @@ function conzultrix_basic_block_view($delta = '') {
         '#links' => $menu,
         '#attributes' => array(
           'class' => array('main-menu', 'links', 'inline', 'clearfix'),
-          'id' => 'main-menu',
         ),
       );
       break;
