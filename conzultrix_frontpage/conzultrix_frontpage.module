@@ -25,7 +25,7 @@ function conzultrix_frontpage_home() {
     //return t('We are a Technology and Business Development company.');
     return array(
       '#markup' => $markup,
-      '#prefix' => '<div class"home-intro">',
+      '#prefix' => '<div class="home-intro">',
       '#suffix' => '</div>',
     );
 }
