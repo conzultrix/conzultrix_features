@@ -58,3 +58,53 @@ function conzultrix_blog_ds_custom_fields_info() {
 
   return $export;
 }
+
+/**
+ * Implements hook_ds_layout_settings_info().
+ */
+function conzultrix_blog_ds_layout_settings_info() {
+  $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|blog|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'blog';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'blog_meta',
+        2 => 'field_image',
+        3 => 'body',
+        4 => 'field_tags',
+        5 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'blog_meta' => 'ds_content',
+      'field_image' => 'ds_content',
+      'body' => 'ds_content',
+      'field_tags' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'limit' => array(
+      'field_tags' => '5',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|blog|teaser'] = $ds_layout;
+
+  return $export;
+}
