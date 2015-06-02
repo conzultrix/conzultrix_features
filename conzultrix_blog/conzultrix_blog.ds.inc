@@ -26,6 +26,11 @@ function conzultrix_blog_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+      ),
     ),
     'node_link' => array(
       'weight' => '5',
