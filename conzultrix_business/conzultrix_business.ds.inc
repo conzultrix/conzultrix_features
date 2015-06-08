@@ -41,6 +41,18 @@ function conzultrix_business_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'cb_more_link';
+  $ds_field->label = 'CB More Link';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'business|teaser';
+  $ds_field->properties = array();
+  $export['cb_more_link'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'formatted_short_title';
   $ds_field->label = 'Formatted Short Title';
   $ds_field->field_type = 3;
