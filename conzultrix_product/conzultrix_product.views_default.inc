@@ -61,6 +61,17 @@ function conzultrix_product_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Products Intro';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'At Conzultrix we build products that creates value for businesses, education, and governments. We are constantly finding ways to employ technology in improving your activities.  We develop tools to help businesses meet their strategic objectives and satisfy their customers, educational institutions to provide a better learning experience for their students, and governments to better better reach her people.
+
+Our products includes:';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['path'] = 'products';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Products';
@@ -83,6 +94,7 @@ function conzultrix_product_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'cover';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['block_description'] = 'Our Products';
   $export['products'] = $view;

@@ -89,6 +89,9 @@ function conzultrix_product_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'cover' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -96,7 +99,7 @@ function conzultrix_product_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
