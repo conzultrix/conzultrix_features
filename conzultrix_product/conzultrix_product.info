@@ -40,5 +40,6 @@ features[variable][] = menu_parent_product
 features[variable][] = node_options_product
 features[variable][] = node_preview_product
 features[variable][] = node_submitted_product
+features[variable][] = pathauto_node_product_pattern
 features[views_view][] = products
 project path = sites/all/modules/conzultrix_features
