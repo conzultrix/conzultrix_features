@@ -31,7 +31,10 @@ function conzultrix_product_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['style_options']['class'] = 'l-grid';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'product-list';
   $handler->display->display_options['row_plugin'] = 'node';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -61,6 +64,16 @@ function conzultrix_product_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['class'] = 'l-grid';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'product-teaser';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -70,7 +83,7 @@ function conzultrix_product_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'At Conzultrix we build products that creates value for businesses, education, and governments. We are constantly finding ways to employ technology in improving your activities.  We develop tools to help businesses meet their strategic objectives and satisfy their customers, educational institutions to provide a better learning experience for their students, and governments to better better reach her people.
 
-Our products includes:';
+Our products include:';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['path'] = 'products';
   $handler->display->display_options['menu']['type'] = 'normal';
@@ -89,8 +102,10 @@ Our products includes:';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['style_options']['class'] = 'l-grid';
-  $handler->display->display_options['style_options']['wrapper_class'] = 'product-teaser item-list';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'product-cover item-list';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
