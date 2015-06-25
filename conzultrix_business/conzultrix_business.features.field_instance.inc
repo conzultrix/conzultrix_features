@@ -77,7 +77,7 @@ function conzultrix_business_field_default_field_instances() {
           'image_style' => 'large',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',

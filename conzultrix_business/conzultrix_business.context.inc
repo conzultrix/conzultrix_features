@@ -1,37 +1,37 @@
 <?php
 /**
  * @file
- * conzultrix_product.context.inc
+ * conzultrix_business.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function conzultrix_product_context_default_contexts() {
+function conzultrix_business_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'product_page';
+  $context->name = 'core_business_page';
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
     'node' => array(
       'values' => array(
-        'product' => 'product',
+        'business' => 'business',
       ),
       'options' => array(
-        'node_form' => '0',
+        'node_form' => '1',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-products-block_1' => array(
+        'views-core_business-block_1' => array(
           'module' => 'views',
-          'delta' => 'products-block_1',
+          'delta' => 'core_business-block_1',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
@@ -39,28 +39,28 @@ function conzultrix_product_context_default_contexts() {
     ),
   );
   $context->condition_mode = 1;
-  $export['product_page'] = $context;
+  $export['core_business_page'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'product_section';
+  $context->name = 'core_business_section';
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'products/*' => 'products/*',
+        'core-business/*' => 'core-business/*',
       ),
     ),
   );
   $context->reactions = array(
     'menu' => array(
-      0 => 'main-menu:products',
+      0 => 'main-menu:core-business',
     ),
   );
-  $context->condition_mode = 1;
-  $export['product_section'] = $context;
+  $context->condition_mode = 0;
+  $export['core_business_section'] = $context;
 
   return $export;
 }
