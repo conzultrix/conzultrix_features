@@ -17,6 +17,15 @@ function conzultrix_business_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'cover' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -60,6 +69,16 @@ function conzultrix_business_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'cover' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'large',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -68,13 +87,9 @@ function conzultrix_business_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'large',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -111,6 +126,12 @@ function conzultrix_business_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Image to be displayed in the full view mode',
     'display' => array(
+      'cover' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -122,10 +143,14 @@ function conzultrix_business_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'blog_teaser',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -163,6 +188,12 @@ function conzultrix_business_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'cover' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -173,7 +204,7 @@ function conzultrix_business_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',

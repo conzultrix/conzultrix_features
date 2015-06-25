@@ -23,7 +23,7 @@ function conzultrix_business_ds_field_settings_info() {
       'format' => 'default',
     ),
     'formatted_short_title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -47,7 +47,8 @@ function conzultrix_business_ds_custom_fields_info() {
   $ds_field->entities = array(
     'node' => 'node',
   );
-  $ds_field->ui_limit = 'business|teaser';
+  $ds_field->ui_limit = 'business|teaser
+business|cover';
   $ds_field->properties = array();
   $export['cb_more_link'] = $ds_field;
 
@@ -82,15 +83,15 @@ function conzultrix_business_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_business_image',
-        1 => 'formatted_short_title',
+        0 => 'formatted_short_title',
+        1 => 'field_full_image',
         2 => 'body',
         3 => 'cb_more_link',
       ),
     ),
     'fields' => array(
-      'field_business_image' => 'ds_content',
       'formatted_short_title' => 'ds_content',
+      'field_full_image' => 'ds_content',
       'body' => 'ds_content',
       'cb_more_link' => 'ds_content',
     ),

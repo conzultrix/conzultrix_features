@@ -89,6 +89,9 @@ function conzultrix_business_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'cover' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
