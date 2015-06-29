@@ -3,6 +3,7 @@ core = 7.x
 package = Conzultrix
 version = 7.x-0.1-alpha1
 project = conzultrix_basic
+dependencies[] = admin_menu
 dependencies[] = connections
 dependencies[] = contact
 dependencies[] = context
