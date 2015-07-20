@@ -69,6 +69,20 @@ function conzultrix_basic_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'responsive_menus_simple_text';
+  $strongarm->value = '☰ ';
+  $export['responsive_menus_simple_text'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'responsive_menus_style';
+  $strongarm->value = 'responsive_menus_simple';
+  $export['responsive_menus_style'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_slogan';
   $strongarm->value = 'Knowledge to Solution';
   $export['site_slogan'] = $strongarm;
