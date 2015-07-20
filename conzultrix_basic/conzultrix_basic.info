@@ -19,6 +19,7 @@ dependencies[] = menu
 dependencies[] = path
 dependencies[] = pathauto
 dependencies[] = rdf
+dependencies[] = responsive_menus
 dependencies[] = strongarm
 dependencies[] = token
 features[context][] = sitewide
