@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * conzultrix_basic.features.user_permission.inc
+ * conzultrix_contact.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function conzultrix_basic_user_default_permissions() {
+function conzultrix_contact_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access site-wide contact form'.
