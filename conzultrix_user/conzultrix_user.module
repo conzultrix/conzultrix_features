@@ -1,10 +1,12 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Conzultrix User feature.
  */
 
- function conzultrix_user_preprocess_username(&$variables) {
+include_once 'conzultrix_user.features.inc';
+
+function conzultrix_user_preprocess_username(&$variables) {
   // Ensure that the full user object is loaded.
   $account = user_load($variables['account']->uid);
 
@@ -21,4 +23,28 @@
     $variables['name'] = $fullname;
   }
   
+}
+
+
+/**
+ * Implements hook_menu_alter().
+ */
+function conzultrix_user_menu_alter(&$items) {
+  $items['user/%user']['title callback'] = conzultrix_user_page_title;
+}
+
+function conzultrix_user_page_title() {
+  if (arg(0) == 'user') {
+    // load uid from url
+    $user = user_load(arg(1));
+    if (isset($user->field_first_name[LANGUAGE_NONE][0]['safe_value']) && isset($user->field_last_name[LANGUAGE_NONE][0]['safe_value'])) {
+      $fullname = $user->field_first_name[LANGUAGE_NONE][0]['safe_value'] . ' ' . $user->field_last_name[LANGUAGE_NONE][0]['safe_value'];
+    }
+  }
+  // fallback to username if custom fields are not set.
+  if (empty($fullname)) {
+    $fullname = $user->name;
+  }
+  
+  return $fullname;
 }
