@@ -37,5 +37,36 @@ function conzultrix_basic_image_default_styles() {
     ),
   );
 
+  // Exported image style: profile.
+  $styles['profile'] = array(
+    'label' => 'profile',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 150,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: sidebar.
+  $styles['sidebar'] = array(
+    'label' => 'sidebar',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 250,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }

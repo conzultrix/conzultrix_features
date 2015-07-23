@@ -5,6 +5,7 @@
  */
 
 include_once 'conzultrix_user.features.inc';
+module_load_include('inc', 'conzultrix_user', 'conzultrix_user.block');
 
 function conzultrix_user_preprocess_username(&$variables) {
   // Ensure that the full user object is loaded.
@@ -30,7 +31,7 @@ function conzultrix_user_preprocess_username(&$variables) {
  * Implements hook_menu_alter().
  */
 function conzultrix_user_menu_alter(&$items) {
-  $items['user/%user']['title callback'] = conzultrix_user_page_title;
+  $items['user/%user']['title callback'] = 'conzultrix_user_page_title';
 }
 
 function conzultrix_user_page_title() {
@@ -47,4 +48,38 @@ function conzultrix_user_page_title() {
   }
   
   return $fullname;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function conzultrix_user_block_info() {
+  // create the user information block
+  // to include photo and other info 
+  $blocks['conzultrix_user_info'] = array(
+    'info' => t('Conzultrix User Info'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function conzultrix_user_block_view($delta = '') {
+  $block = array();
+  
+  switch ($delta) {
+    
+    case 'conzultrix_user_info' :
+      $content = conzultrix_user_user_info_block();
+      if (!empty($content)) {
+        $block['subject'] = t('');
+        $block['content'] = $content;
+      }
+      break;
+  }
+  
+  return $block;
 }
