@@ -41,6 +41,7 @@ features[variable][] = connections_telephone_no
 features[variable][] = connections_twitter_url
 features[variable][] = fences_default_classes
 features[variable][] = fences_default_markup
+features[variable][] = node_admin_theme
 features[variable][] = responsive_menus_simple_text
 features[variable][] = responsive_menus_style
 features[variable][] = site_slogan
