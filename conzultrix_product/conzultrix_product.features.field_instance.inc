@@ -74,7 +74,7 @@ function conzultrix_product_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => '',
+          'image_style' => 'height-55',
         ),
         'type' => 'image',
         'weight' => 0,

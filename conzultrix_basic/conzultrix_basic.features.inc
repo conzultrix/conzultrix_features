@@ -37,6 +37,22 @@ function conzultrix_basic_image_default_styles() {
     ),
   );
 
+  // Exported image style: height-55.
+  $styles['height-55'] = array(
+    'label' => 'Height-55',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 55,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: profile.
   $styles['profile'] = array(
     'label' => 'profile',

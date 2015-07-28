@@ -60,6 +60,12 @@ function conzultrix_basic_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'header',
+          'weight' => '-9',
+        ),
         'conzultrix_basic-conzultrix_main_menu' => array(
           'module' => 'conzultrix_basic',
           'delta' => 'conzultrix_main_menu',
