@@ -45,5 +45,6 @@ features[variable][] = menu_parent_business
 features[variable][] = node_options_business
 features[variable][] = node_preview_business
 features[variable][] = node_submitted_business
+features[variable][] = pathauto_node_business_pattern
 features[views_view][] = core_business
 project path = sites/all/modules/conzultrix_features

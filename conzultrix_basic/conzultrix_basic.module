@@ -6,3 +6,19 @@
 
 include_once 'conzultrix_basic.features.inc';
 module_load_include('inc', 'conzultrix_basic', 'conzultrix_basic.block');
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function conzultrix_basic_form_search_block_form_alter(&$form, &$form_state) {
+  $form['actions']['submit']['#type'] = 'image_button';
+  $form['actions']['submit']['#src'] = drupal_get_path('module', 'conzultrix_basic') . '/images/search.png';
+  $form['search_block_form']['#attributes']['placeholder'] = t('search');
+}
+
+function conzultrix_basic_form_search_form_alter(&$form, &$form_state) {
+  $form['basic']['submit']['#type'] = 'image_button';
+  $form['basic']['submit']['#src'] = drupal_get_path('module', 'conzultrix_basic') . '/images/search.png';
+}
+
+
