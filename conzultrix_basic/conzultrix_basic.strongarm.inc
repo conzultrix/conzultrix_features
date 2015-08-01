@@ -84,7 +84,11 @@ function conzultrix_basic_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'responsive_menus_simple_text';
-  $strongarm->value = '☰ ';
+  $strongarm->value = '<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>';
   $export['responsive_menus_simple_text'] = $strongarm;
 
   $strongarm = new stdClass();
