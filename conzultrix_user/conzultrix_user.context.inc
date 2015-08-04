@@ -13,6 +13,46 @@ function conzultrix_user_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'login_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'user' => 'user',
+        'user/login' => 'user/login',
+        'user/password' => 'user/password',
+        'user/register' => 'user/register',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'anonymous user' => 'anonymous user',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'conzultrix_user-login_intro' => array(
+          'module' => 'conzultrix_user',
+          'delta' => 'login_intro',
+          'region' => 'prefix',
+          'weight' => '-10',
+        ),
+      ),
+      'layout' => 'login',
+    ),
+    'theme_html' => array(
+      'class' => 'login-page',
+    ),
+  );
+  $context->condition_mode = 1;
+  $export['login_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'user_page';
   $context->description = '';
   $context->tag = '';

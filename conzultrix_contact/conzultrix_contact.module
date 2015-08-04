@@ -15,6 +15,10 @@ function conzultrix_contact_form_contact_site_form_alter(&$form, &$form_state) {
     '#type' => 'textfield',
   );
   
+  $form['name']['#title'] = t('Name');
+  $form['mail']['#title'] = t('E-mail');
+  
+ 
   // resort the form so that the phone number is
   // at the right spot
   

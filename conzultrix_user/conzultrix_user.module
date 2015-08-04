@@ -32,6 +32,13 @@ function conzultrix_user_preprocess_username(&$variables) {
  */
 function conzultrix_user_menu_alter(&$items) {
   $items['user/%user']['title callback'] = 'conzultrix_user_page_title';
+  $items['user/login']['title callback'] = 'drupal_set_title';
+  $items['user/login']['title arguments'] = array('Sign In');
+  
+  // remove tabs from login page and change them to links;
+  $items['user']['type'] = MENU_CALLBACK;
+  $items['user/password']['type'] = MENU_CALLBACK;
+	$items['user/register']['type'] = MENU_CALLBACK;
 }
 
 function conzultrix_user_page_title() {
@@ -60,6 +67,10 @@ function conzultrix_user_block_info() {
     'info' => t('Conzultrix User Info'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['login_intro'] = array(
+    'info' => t('Login Inrto'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
   
   return $blocks;
 }
@@ -78,6 +89,11 @@ function conzultrix_user_block_view($delta = '') {
         $block['subject'] = t('');
         $block['content'] = $content;
       }
+      break;
+    
+    case 'login_intro' :
+      $block['subject'] = t('');
+      $block['content'] = '<div class="login-intro"><h2>Conzultrix</h2><div class="login-caption">Make Impact</div></div>';
       break;
   }
   
