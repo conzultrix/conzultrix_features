@@ -1,20 +1,28 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Conzultrix Contact feature.
  */
+
+include_once 'conzultrix_contact.features.inc';
 
  /**
  * Implements hook_form_FORM_ID_alter().
  */
-function conzultrix_contact_form_contact_site_form_alter(&$form, &$form_state) { 
+function conzultrix_contact_form_contact_site_form_alter(&$form, &$form_state) {
   // Add an optional textfield to collect
   // users phone number in the contact form
   $form['phone'] = array(
     '#title' => t('Phone'),
     '#type' => 'textfield',
   );
+  $form['company'] = array(
+    '#title' => t('Company'),
+    '#type' => 'textfield',
+  );
   
+  // change the title and email input
+  // title from Your email to email.
   $form['name']['#title'] = t('Name');
   $form['mail']['#title'] = t('E-mail');
   
@@ -26,6 +34,7 @@ function conzultrix_contact_form_contact_site_form_alter(&$form, &$form_state) {
     'name',
     'mail',
     'phone',
+    'company',
     'subject',
     'cid',
     'message',
@@ -39,16 +48,10 @@ function conzultrix_contact_form_contact_site_form_alter(&$form, &$form_state) {
     $form[$field]['#weight'] = $key;
   }
   
-  // for default category hide the
-  // category select field if contact_forms
-  // module is enabled
-  if (module_exists('contact_forms')) {
-    //$path = current_path();
-    if (current_path() == 'contact') {
-      $form['cid']['#type'] = 'hidden';
-      $form['cid']['#value'] = $form['cid']['#default_value'];
-    }
-  }
+  // set and hide the category field for a cleaner form
+  // set the subject field if value is provided
+  _conzultrix_contact_set_fields($form);
+  
 }
 
 /**
@@ -59,5 +62,130 @@ function conzultrix_contact_mail_alter(&$message) {
   // sent by the site-wide contact form page/
   if ($message['id'] == 'contact_page_mail' || 'contact_page_copy') {
     $message['body'][] = t('Phone') . ': ' . $message['params']['phone'];
+    $message['body'][] = t('Company') . ': ' . $message['params']['company'];
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function conzultrix_contact_block_info() {
+  // block to display other contact information
+  // along the contact form.
+  $blocks['conzultrix_more_contact'] = array(
+    'info' => t('Conzultrix More Contact'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['contact_page_intro'] = array(
+    'info' => t('Contact Page Into'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function conzultrix_contact_block_view($delta = '') {
+  $block = array();
+  
+  switch ($delta) {
+    
+    case 'conzultrix_more_contact' :
+      $content = conzultrix_contact_more_contact_block();
+      if (!empty($content)) {
+        $block['subject'] = t('');
+        $block['content'] = $content;
+      }
+      break;
+    
+    case 'contact_page_intro' :
+      $block['subject'] = t('');
+      $block['content'] = '<div class="contact-intro">You have an inquiry about our products, services, or offerings? We are happy to provide any information you may require. Just let us know how we can be of service by filling our contact form.</div>';
+  }
+  
+  return $block;
+}
+
+/**
+ * Build contact page info block
+ */
+function conzultrix_contact_more_contact_block() {
+  $output = array();
+  
+  $output['email'] = array(
+    '#prefix' => '<div class="contact-email">',
+    '#suffix' => '</div>',
+    'header' => array(
+      '#markup' => '<h3>Email</h3>',
+    ),
+    'sales' => array(
+      '#prefix' => '<div class="email">',
+      '#suffix' => '</div>',
+      '#markup' => '<div class="email-sales"><span class="label">Sales:</span> sales@conzultrix.com</div>',
+    ),
+    'training' => array(
+      '#prefix' => '<div class="email">',
+      '#suffix' => '</div>',
+      '#markup' => '<div class="email-training"><span class="label">Training:</span> training@conzultrix.com</div>',
+    ),
+  );
+  
+  $output['phone'] = array(
+    '#prefix' => '<div class="contact-phone">',
+    '#suffix' => '</div>',
+    'header' => array(
+      '#markup' => '<h3>Phone</h3>',
+    ),
+    'nigeria' => array(
+      '#prefix' => '<div class="phone">',
+      '#suffix' => '</div>',
+      '#markup' => '<div class="phone-nigeria"><span class="label">Nigeria:</span> 08032987021</div>',
+    ),
+    'intl' => array(
+      '#prefix' => '<div class="phone">',
+      '#suffix' => '</div>',
+      '#markup' => '<div class="phone-intl"><span class="label">Intl:</span> +2348032987021</div>',
+    ),
+  );
+  
+  $output['social'] = array(
+    '#prefix' => '<div class="contact-social">',
+    '#suffix' => '</div>',
+    'header' => array(
+      '#markup' => '<h3>Social</h3>',
+    ),
+    'facebook' => array(
+      '#prefix' => '<div class="social facebook-link">',
+      '#suffix' => '</div>',
+      '#markup' => l('facebook.com/conzultrix', 'https://facebook.com/conzultrix'),
+    ),
+    'twitter' => array(
+      '#prefix' => '<div class="social twitter-link">',
+      '#suffix' => '</div>',
+      '#markup' => l('twitter.com/conzultrix', 'https://twitter.com/conzultrix'),
+    ),
+  );
+  
+  return $output;
+}
+
+function _conzultrix_contact_set_fields (&$form) {
+  $options = array('sales', 'training');
+    
+  if (arg(0) == 'contact' && arg(1) == 'sales') {
+    $form['cid']['#type'] = 'hidden';
+    $form['cid']['#value'] = '2';
+  }  elseif (arg(0) == 'contact' && arg(1) == 'training') {
+    $form['cid']['#type'] = 'hidden';
+    $form['cid']['#value'] = '3';
+  } else {
+    $form['cid']['#type'] = 'hidden';
+    $form['cid']['#value'] = $form['cid']['#default_value'];
+  }
+  
+  if (arg(0) == 'contact' && in_array(arg(1), $options) && !empty(arg(2))) {
+    $form['subject']['#value'] = check_plain(arg(2));
   }
 }
