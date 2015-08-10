@@ -75,7 +75,7 @@ function conzultrix_basic_image_default_styles() {
       3 => array(
         'name' => 'image_scale',
         'data' => array(
-          'width' => 250,
+          'width' => 200,
           'height' => '',
           'upscale' => 0,
         ),
