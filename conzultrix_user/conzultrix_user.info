@@ -8,6 +8,7 @@ dependencies[] = context_omega
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = edit_profile
+dependencies[] = email_registration
 dependencies[] = features
 dependencies[] = link
 dependencies[] = strongarm

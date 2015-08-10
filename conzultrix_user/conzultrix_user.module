@@ -32,8 +32,13 @@ function conzultrix_user_preprocess_username(&$variables) {
  */
 function conzultrix_user_menu_alter(&$items) {
   $items['user/%user']['title callback'] = 'conzultrix_user_page_title';
-  $items['user/login']['title callback'] = 'drupal_set_title';
-  $items['user/login']['title arguments'] = array('Sign In');
+  
+  if (user_is_anonymous()) {
+    $items['user/login']['title callback'] = 'drupal_set_title';
+    $items['user/login']['title arguments'] = array('Sign In');
+  }
+  dpm(user_is_anonymous());
+  
   
   // remove tabs from login page and change them to links;
   $items['user']['type'] = MENU_CALLBACK;
