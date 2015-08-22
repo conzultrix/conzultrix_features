@@ -56,6 +56,7 @@ function conzultrix_basic_block_view($delta = '') {
         . ' <a href="http://www.conzultrix.com">Conzultrix</a>. '
         . 'All Rights Reserved'
         . '</div>';
+      break;
 
   }
   return $block;
