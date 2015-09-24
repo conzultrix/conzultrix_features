@@ -18,6 +18,7 @@ dependencies[] = menu
 dependencies[] = path
 dependencies[] = pathauto
 dependencies[] = rdf
+dependencies[] = redirect
 dependencies[] = responsive_menus
 dependencies[] = search
 dependencies[] = strongarm

@@ -1,0 +1,14 @@
+name = Conzultrix Metatags
+core = 7.x
+package = Conzultrix
+version = 7.x-0.1-alpha1
+dependencies[] = metatag
+features[features_api][] = api:2
+features[metatag][] = global
+features[metatag][] = global:frontpage
+features[metatag][] = node
+features[metatag][] = node:blog
+features[metatag][] = node:product
+features[metatag][] = user
+features[metatag][] = view
+project path = sites/all/modules/conzultrix_features
