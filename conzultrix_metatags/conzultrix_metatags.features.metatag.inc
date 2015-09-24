@@ -537,7 +537,6 @@ function conzultrix_metatags_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:title] | [site:name]',
@@ -634,7 +633,6 @@ function conzultrix_metatags_metatag_export_default() {
   // Exported Metatag config instance: user.
   $config['user'] = array(
     'instance' => 'user',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[user:name] | [site:name]',
@@ -675,7 +673,6 @@ function conzultrix_metatags_metatag_export_default() {
   // Exported Metatag config instance: view.
   $config['view'] = array(
     'instance' => 'view',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[view:title] | [site:name]',
