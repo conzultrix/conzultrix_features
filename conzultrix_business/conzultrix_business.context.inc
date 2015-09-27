@@ -50,13 +50,13 @@ function conzultrix_business_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'core-business/*' => 'core-business/*',
+        'our-business/*' => 'our-business/*',
       ),
     ),
   );
   $context->reactions = array(
     'menu' => array(
-      0 => 'main-menu:core-business',
+      0 => 'main-menu:our-business',
     ),
   );
   $context->condition_mode = 0;

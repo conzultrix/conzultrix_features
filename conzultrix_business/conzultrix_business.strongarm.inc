@@ -148,7 +148,7 @@ function conzultrix_business_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_business_pattern';
-  $strongarm->value = '[node:content-type]/[node:title]';
+  $strongarm->value = 'our-business/[node:title]';
   $export['pathauto_node_business_pattern'] = $strongarm;
 
   return $export;
