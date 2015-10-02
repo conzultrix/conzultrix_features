@@ -35,7 +35,7 @@ function conzultrix_basic_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'connections_gplus_url';
-  $strongarm->value = 'https://plus.google.com/113163238906144736441/about';
+  $strongarm->value = 'https://plus.google.com/+Conzultrix';
   $export['connections_gplus_url'] = $strongarm;
 
   $strongarm = new stdClass();
