@@ -635,31 +635,28 @@ function conzultrix_metatags_metatag_export_default() {
     'instance' => 'user',
     'config' => array(
       'title' => array(
-        'value' => '[user:name] | [site:name]',
-      ),
-      'image' => array(
-        'value' => '[user:picture:url]',
-      ),
-      'itemprop:name' => array(
-        'value' => '[user:name]',
+        'value' => '[user:field-first-name] [user:field-last-name] | [site:name] ',
       ),
       'itemtype' => array(
         'value' => 'Person',
       ),
+      'itemprop:name' => array(
+        'value' => '[user:name]',
+      ),
       'itemprop:image' => array(
         'value' => '[user:picture:url]',
-      ),
-      'og:title' => array(
-        'value' => '[user:name]',
       ),
       'og:type' => array(
         'value' => 'profile',
       ),
-      'profile:username' => array(
+      'og:title' => array(
         'value' => '[user:name]',
       ),
       'og:image' => array(
         'value' => '[user:picture:url]',
+      ),
+      'profile:username' => array(
+        'value' => '[user:name]',
       ),
       'twitter:title' => array(
         'value' => '[user:name]',
